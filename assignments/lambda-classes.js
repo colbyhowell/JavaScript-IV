@@ -33,17 +33,25 @@ class Student extends Person{
     this.className = attr.className
     this.favSubjects = attr.favSubjects
   }
-  listsSubjects(subjects){
-    this.favSubjects.forEach(subjects)
-    console.log(subjects)
+  // listsSubjects(favSubjects){
+  //   favSubjects.forEach(function(subjects){
+  //   console.log(subjects)
+  //   })
+  // }
+
+listsSubjects(favSubjects){
+    favSubjects.forEach(function(item){
+      console.log(item);
+    });
   }
 
+
   prAssignment(subject){
-    console.log("${student.name} has submitted a PR for " + subject)
+    console.log(`${this.name} has begun sprint challenge on ${this.favSubjects}`)
   }
 
   sprintChallenge(){
-    console.log("${student.name} has begun sprint challenge on" + subject)
+    console.log(`${this.name} has begun sprint challenge on ${this.favSubjects}`)
   }
 }
 
@@ -60,3 +68,9 @@ class ProjectManager extends Instructor{
     console.log(`${this.name} debugs ${student.name}'s code on ${this.subject}'`)
   }
 }
+
+const colby = new Student({name: "colby", age: 29, location: "Louisiana", background: "marketing", favLanguage: "JavaScript", catchPhrase:"what's that smell?", className:"WEBPT7", favSubjects: ["science", "english", "computers"]})
+
+console.log(colby)
+
+console.log(colby.sprintChallenge())
